@@ -54,4 +54,5 @@ COPY --from=build $APP_ROOT $APP_ROOT
 # RUN useradd deploy --create-home --shell /bin/bash
 # USER deploy:deploy
 
+EXPOSE 8080
 CMD ["bin/web"]
