@@ -1,4 +1,5 @@
 require "sinatra/base"
+require "socket"
 
 class SinatraApp < Sinatra::Base
   get "/" do
@@ -6,12 +7,14 @@ class SinatraApp < Sinatra::Base
     formatted_params = query_params.empty? ? "" : "?" + query_params
     client_ip = request.ip
     request_host = request.host
-    puts "#{Time.now} - #{client_ip} - #{request_host} - GET /#{formatted_params}"
+    server_hostname = Socket.gethostname
+    puts "#{Time.now} - #{client_ip} - #{request_host} - #{server_hostname} -GET /#{formatted_params}"
 
     # Print X-Forwarded-* headers
     puts "X-Forwarded-For: #{request.env["HTTP_X_FORWARDED_FOR"]}"
     puts "X-Forwarded-Host: #{request.env["HTTP_X_FORWARDED_HOST"]}"
     puts "X-Forwarded-Proto: #{request.env["HTTP_X_FORWARDED_PROTO"]}"
+    puts "Server Hostname: #{server_hostname}"
 
     erb :index
   end
