@@ -14,6 +14,7 @@ class SinatraApp < Sinatra::Base
     puts "X-Forwarded-For: #{request.env["HTTP_X_FORWARDED_FOR"]}"
     puts "X-Forwarded-Host: #{request.env["HTTP_X_FORWARDED_HOST"]}"
     puts "X-Forwarded-Proto: #{request.env["HTTP_X_FORWARDED_PROTO"]}"
+    puts "X-Real-IP: #{request.env["HTTP_X_REAL_IP"]}"
     puts "Server Hostname: #{server_hostname}"
 
     erb :index
