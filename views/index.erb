@@ -8,5 +8,15 @@
 <body>
   <h1>Hello, Sinatra! Test 1</h1>
   <img src="/jelly-beans.jpg" />
+  <pre>
+    Client IP: <%= request.ip %>
+    Request Host: <%= request.host %>
+    Server Hostname: <%= Socket.gethostname %>
+    X-Forwarded-Host: <%= request.env["HTTP_X_FORWARDED_HOST"] %>
+    X-Forwarded-For: <%= request.env["HTTP_X_FORWARDED_FOR"] %>
+    X-Forwarded-Proto: <%= request.env["HTTP_X_FORWARDED_PROTO"] %>
+    X-Forwarded-Port: <%= request.env["HTTP_X_FORWARDED_PORT"] %>
+    X-Real-IP: <%= request.env["HTTP_X_REAL_IP"] %>
+  </pre>
 </body>
 </html>
