@@ -27,12 +27,6 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle lock --add-platform $(ruby -e 'puts RUBY_PLATFORM')
 RUN bundle install
 
-ARG AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_REGION
-ENV AWS_ACCESS_KEY_ID=""
-ENV AWS_SECRET_ACCESS_KEY=""
-ENV AWS_SESSION_TOKEN=""
-ENV AWS_REGION=""
-
 # Copy application code
 RUN cp Gemfile.lock Gemfile.lock.bak
 COPY . .
