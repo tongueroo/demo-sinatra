@@ -9,14 +9,15 @@ class SinatraApp < Sinatra::Base
     request_host = request.host
     server_hostname = Socket.gethostname
     puts "#{Time.now} - #{client_ip} - #{request_host} - #{server_hostname} -GET /#{formatted_params}"
+    # puts "some message with a newline\nand more text"
 
     # Print X-Forwarded-* headers
-    puts "X-Forwarded-Host: #{request.env["HTTP_X_FORWARDED_HOST"]}"
-    puts "X-Forwarded-For: #{request.env["HTTP_X_FORWARDED_FOR"]}"
-    puts "X-Forwarded-Proto: #{request.env["HTTP_X_FORWARDED_PROTO"]}"
-    puts "X-Forwarded-Port: #{request.env["HTTP_X_FORWARDED_PORT"]}"
-    puts "X-Real-IP: #{request.env["HTTP_X_REAL_IP"]}"
-    puts "Server Hostname: #{server_hostname}"
+    # puts "X-Forwarded-Host: #{request.env["HTTP_X_FORWARDED_HOST"]}"
+    # puts "X-Forwarded-For: #{request.env["HTTP_X_FORWARDED_FOR"]}"
+    # puts "X-Forwarded-Proto: #{request.env["HTTP_X_FORWARDED_PROTO"]}"
+    # puts "X-Forwarded-Port: #{request.env["HTTP_X_FORWARDED_PORT"]}"
+    # puts "X-Real-IP: #{request.env["HTTP_X_REAL_IP"]}"
+    # puts "Server Hostname: #{server_hostname}"
 
     erb :index
   end

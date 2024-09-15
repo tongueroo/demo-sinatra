@@ -1,5 +1,6 @@
 #!/bin/bash
 set -ex
 PORT=${PORT:-8080}
+# errorstuff
 exec bundle exec puma --port $PORT
 
