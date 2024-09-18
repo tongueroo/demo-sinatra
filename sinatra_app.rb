@@ -9,7 +9,8 @@ class SinatraApp < Sinatra::Base
     puts "X-Forwarded-Proto: #{request.env["HTTP_X_FORWARDED_PROTO"].inspect}"
     puts "X-Forwarded-Port: #{request.env["HTTP_X_FORWARDED_PORT"].inspect}"
     puts "X-Real-IP: #{request.env["HTTP_X_REAL_IP"].inspect}"
-    # puts "Server Hostname: #{server_hostname}"
+    puts "Server Hostname: #{server_hostname}"
+    puts "Request Host: #{request.host}"
 
     query_params = request.query_string
     formatted_params = query_params.empty? ? "" : "?" + query_params
