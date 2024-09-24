@@ -4,13 +4,13 @@ require "socket"
 class SinatraApp < Sinatra::Base
   get "/" do
     # Print X-Forwarded-* headers
-    # puts "X-Forwarded-Host: #{request.env["HTTP_X_FORWARDED_HOST"].inspect}"
-    # puts "X-Forwarded-For: #{request.env["HTTP_X_FORWARDED_FOR"].inspect}"
-    # puts "X-Forwarded-Proto: #{request.env["HTTP_X_FORWARDED_PROTO"].inspect}"
-    # puts "X-Forwarded-Port: #{request.env["HTTP_X_FORWARDED_PORT"].inspect}"
-    # puts "X-Real-IP: #{request.env["HTTP_X_REAL_IP"].inspect}"
-    # puts "Server Hostname: #{Socket.gethostname}"
-    # puts "Request Host: #{request.host}"
+    puts "X-Forwarded-Host: #{request.env["HTTP_X_FORWARDED_HOST"].inspect}"
+    puts "X-Forwarded-For: #{request.env["HTTP_X_FORWARDED_FOR"].inspect}"
+    puts "X-Forwarded-Proto: #{request.env["HTTP_X_FORWARDED_PROTO"].inspect}"
+    puts "X-Forwarded-Port: #{request.env["HTTP_X_FORWARDED_PORT"].inspect}"
+    puts "X-Real-IP: #{request.env["HTTP_X_REAL_IP"].inspect}"
+    puts "Server Hostname: #{Socket.gethostname}"
+    puts "Request Host: #{request.host}"
 
     query_params = request.query_string
     formatted_params = query_params.empty? ? "" : "?" + query_params
