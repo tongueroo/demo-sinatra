@@ -1,6 +1,16 @@
 #!/bin/bash
-echo "Worker is running"
+
+# Function to handle cleanup and exit
+cleanup() {
+    echo "Received signal. Exiting..."
+    exit 0
+}
+
+# Set up trap to catch SIGTERM and SIGINT
+trap cleanup SIGTERM SIGINT
+
+echo "Test worker is running"
 while true; do
-  date
-  sleep 5
+    date
+    sleep 5
 done
