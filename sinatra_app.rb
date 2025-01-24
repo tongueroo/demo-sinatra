@@ -22,4 +22,8 @@ class SinatraApp < Sinatra::Base
 
     erb :index
   end
+
+  get "/up" do
+    "OK"
+  end
 end
