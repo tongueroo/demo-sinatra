@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Running post-deploy hook"
+env | sort
+echo "Done Running post-deploy hook"
