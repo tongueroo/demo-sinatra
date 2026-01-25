@@ -1,8 +1,6 @@
 require "sinatra/base"
 require "socket"
 
-raise "the roof is on fire"
-
 class SinatraApp < Sinatra::Base
   get "/" do
     # Print X-Forwarded-* headers
